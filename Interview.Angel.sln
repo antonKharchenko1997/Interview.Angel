@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Angel", "Interview.Angel\Interview.Angel.csproj", "{D90B1B21-BE2C-488B-923E-969F6C1DC852}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Angel.Core", "Interview.Angel.Core\Interview.Angel.Core.csproj", "{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D90B1B21-BE2C-488B-923E-969F6C1DC852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D90B1B21-BE2C-488B-923E-969F6C1DC852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D90B1B21-BE2C-488B-923E-969F6C1DC852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
