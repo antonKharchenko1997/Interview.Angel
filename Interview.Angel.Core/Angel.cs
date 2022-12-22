@@ -9,24 +9,23 @@ namespace Interview.Angel.Core;
 public class Angel
 {
     private readonly ITelegramBotClient _telegramBotClient;
-    private readonly LiveStreamMonitorService _liveStreamMonitorService;
 
     public Angel(string telegramBotToken, string twitchApiToken, string twitchApiClientId)
     {
         _telegramBotClient = new TelegramBotClient(telegramBotToken);
-        _liveStreamMonitorService = new LiveStreamMonitorService(new TwitchAPI(settings: new ApiSettings
+        var liveStreamMonitorService = new LiveStreamMonitorService(new TwitchAPI(settings: new ApiSettings
         {
             AccessToken = twitchApiToken,
             ClientId = twitchApiClientId
         }));
 
-        _liveStreamMonitorService.OnStreamOnline += OnStreamOnline;
-        _liveStreamMonitorService.Start();
+        liveStreamMonitorService.OnStreamOnline += OnStreamOnline;
+        liveStreamMonitorService.Start();
     }
 
-    private void OnStreamOnline(object? sender, OnStreamOnlineArgs onStreamOnlineArgs)
+    private async void OnStreamOnline(object? sender, OnStreamOnlineArgs onStreamOnlineArgs)
     {
-        var game = onStreamOnlineArgs.Stream.GameName;
-        _telegramBotClient.SendTextMessageAsync(123123, $"Stream about {game}");
+        var game = onStreamOnlineArgs.Stream.GameName ?? string.Empty;
+        await _telegramBotClient.SendTextMessageAsync(123123, $"Stream about {game}").ConfigureAwait(false);
     }
 }

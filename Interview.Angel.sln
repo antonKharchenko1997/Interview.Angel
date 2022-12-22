@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Angel", "Interview.Angel\Interview.Angel.csproj", "{D90B1B21-BE2C-488B-923E-969F6C1DC852}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.API", "Interview.API\Interview.API.csproj", "{D90B1B21-BE2C-488B-923E-969F6C1DC852}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interview.Angel.Core", "Interview.Angel.Core\Interview.Angel.Core.csproj", "{F341635F-4BA5-4DFC-8A6D-08F5FE8EC667}"
 EndProject
