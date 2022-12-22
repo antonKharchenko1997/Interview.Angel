@@ -1,10 +1,13 @@
 ﻿using Telegram.Bot;
+using Telegram.Bot.Polling;
+using Telegram.Bot.Types.Enums;
 using TwitchLib.Api;
 using TwitchLib.Api.Core;
 using TwitchLib.Api.Services;
 using TwitchLib.Api.Services.Events.LiveStreamMonitor;
 
 namespace Interview.Angel.Core;
+
 
 public class Angel
 {
@@ -13,6 +16,14 @@ public class Angel
     public Angel(string telegramBotToken, string twitchApiToken, string twitchApiClientId)
     {
         _telegramBotClient = new TelegramBotClient(telegramBotToken);
+        _telegramBotClient.StartReceiving<TelegramBotMessagesHandler>(new ReceiverOptions
+        {
+            AllowedUpdates = new []
+            {
+                UpdateType.Message
+            }
+        });
+        
         var liveStreamMonitorService = new LiveStreamMonitorService(new TwitchAPI(settings: new ApiSettings
         {
             AccessToken = twitchApiToken,
@@ -20,6 +31,11 @@ public class Angel
         }));
 
         liveStreamMonitorService.OnStreamOnline += OnStreamOnline;
+        
+        liveStreamMonitorService.SetChannelsByName(new List<string>
+        {
+         "fandercs"   
+        });
         liveStreamMonitorService.Start();
     }
 

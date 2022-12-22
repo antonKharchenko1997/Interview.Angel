@@ -4,7 +4,7 @@ using Telegram.Bot.Types;
 
 namespace Interview.Angel.Core;
 
-public class TelegramBotMessagesHandler : IUpdateHandler
+public sealed class TelegramBotMessagesHandler : IUpdateHandler
 {
     public Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
